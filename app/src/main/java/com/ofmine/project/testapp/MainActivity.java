@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
                         GsonBuilder builder = new GsonBuilder();
                         Gson gson = builder.create();
                         String answer=response.responseString;
-                         userData=gson.fromJson(answer, UserData.class);
+                        userData=gson.fromJson(answer, UserData.class);
 
                         textView.setText( userData.response.get(0).getFirst_name());
                     }
@@ -102,26 +102,26 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-        @Override
-        protected void onActivityResult ( int requestCode, int resultCode, Intent data){
-            if (!VKSdk.onActivityResult(requestCode, resultCode, data, new VKCallback<VKAccessToken>() {
-                @Override
-                public void onResult(VKAccessToken res) {
+    @Override
+    protected void onActivityResult ( int requestCode, int resultCode, Intent data){
+        if (!VKSdk.onActivityResult(requestCode, resultCode, data, new VKCallback<VKAccessToken>() {
+            @Override
+            public void onResult(VKAccessToken res) {
 
-                        textView.setText("success");
+                textView.setText("success");
 
 // Пользователь успешно авторизовался
-                }
-
-                @Override
-                public void onError(VKError error) {
-                    textView.setText("failure");
-// Произошла ошибка авторизации (например, пользователь запретил авторизацию)
-                }
-            })) {
-                super.onActivityResult(requestCode, resultCode, data);
             }
+
+            @Override
+            public void onError(VKError error) {
+                textView.setText("failure");
+// Произошла ошибка авторизации (например, пользователь запретил авторизацию)
+            }
+        })) {
+            super.onActivityResult(requestCode, resultCode, data);
         }
+    }
 
 
 
