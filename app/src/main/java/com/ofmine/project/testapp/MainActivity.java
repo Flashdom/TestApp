@@ -13,6 +13,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.ofmine.project.testapp.DI.War;
 import com.vk.sdk.VKAccessToken;
 import com.vk.sdk.VKCallback;
 import com.vk.sdk.VKScope;
@@ -100,7 +101,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
     }
     @Override
     protected void onActivityResult ( int requestCode, int resultCode, Intent data){
